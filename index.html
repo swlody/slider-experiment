@@ -8,12 +8,19 @@
     <title>Slider demo</title>
     </head>
     <body>
-        <div class="slider-wrapper">
-            <div class="slider-mark" style="--x: 50%;">
-                <div class="marker"></div>
-                <div class="madbank">$5</div>
-            </div>
-            <input type="range" class="slider"></input>
+      <div class="progress-wrapper">
+        <div class="slider-mark" style="--x: 20%">
+          <div class="marker"></div>
+          <div class="madbank">$0</div>
         </div>
+        <progress value="10" max="50"></progress>
+      </div>
+      <div class="slider-wrapper">
+        <div class="slider-mark" style="--x: 20%">
+          <div class="marker"></div>
+          <div class="madbank">$5</div>
+        </div>
+        <input type="range" class="slider"></input>
+      </div>
     </body>
 </html>
