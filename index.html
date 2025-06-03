@@ -1,28 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Slider demo</title>
-    </head>
-    <body>
-      <div class="progress-wrapper">
-        <p>Amount raised so far:</p>
-        <div class="slider-mark" style="--x: 20%">
-          <div class="marker"></div>
-          <div class="madbank">$0</div>
-        </div>
-        <progress value="10" max="50"></progress>
+  </head>
+  <body>
+    <div class="range-wrap">
+      <input
+        type="range"
+        class="range"
+        id="price"
+        name="price"
+        value="15"
+        list="price-list"
+        min="5"
+        max="50"
+        step="1"
+        oninput="updateValue(this.value)"
+      />
+      <div class="labels">
+        <span style="--val: 5; --min: 5; --max: 50">
+          <p>Low</p>
+        </span>
+        <span style="--val: 23; --min: 5; --max: 50">
+          <p>Medium</p>
+        </span>
+        <span style="--val: 50; --min: 5; --max: 50">
+          <p>High</p>
+        </span>
       </div>
-      <div class="slider-wrapper">
-        <p>Choose price:</p>
-        <div class="slider-mark" style="--x: 20%">
-          <div class="marker"></div>
-          <div class="madbank">$5</div>
-        </div>
-        <input type="range" class="slider"></input>
-      </div>
-    </body>
+      <input
+        type="number"
+        id="sliderValue"
+        min="5"
+        max="50"
+        value="15"
+        onchange="updateSlider(this.value)"
+      />
+    </div>
+    <script>
+      function updateValue(value) {
+        document.getElementById("sliderValue").value = value;
+      }
+      function updateSlider(value) {
+        document.getElementById("price").value = value;
+      }
+    </script>
+  </body>
 </html>

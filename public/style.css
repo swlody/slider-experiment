@@ -1,86 +1,67 @@
-html {
-  --progress-fill-color: green
+body {
+  color: #ebe3de;
+  background-color: #080504;
 }
-
-body{
-  justify-content: center;
-  background-color: plum;
-  align-items: center;
-  height: 100dvh;
-  display: grid;
-  width: 100vw;
-  overflow: hidden;
-}
-
-progress {
-  height: 20px;
-  width: 600px;
-  -webkit-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-  color: var(--progress-fill-color);
-}
-progress::-moz-progress-bar {
-  background-color: var(--progress-fill-color);
-}
-progress::-webkit-progress-bar {
-  background-color: var(--progress-fill-color);
-}
-
-.slider-wrapper{
+.range-wrap {
   position: relative;
-  height: 20px;
+  width: 500px;
+  margin: 0 auto 3rem;
 }
-
-.slider{
-  height: 20px;
-  width: 600px;
-  -webkit-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  background: #fff;
-  cursor: pointer;
-  margin: 0;
+.labels span {
+  position: absolute;
+  left: calc(
+    (100% - 10px) * ((var(--val) - var(--min)) / (var(--max) - var(--min))) +
+      6px
+  );
+  user-select: none;
+}
+.labels span::before {
   padding: 0;
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background-color: #c34346;
+  pointer-events: none;
+  transform: translateY(-30px);
+}
+span p {
+  transform: translateX(2px) translateY(5px) rotate(45deg);
+  transform-origin: top left;
+  margin: 0;
+}
+.range {
+  width: 500px;
+  height: 20px;
+  appearance: none;
+  border-radius: 5px;
+  cursor: pointer;
   outline: none;
   border: none;
+  background-color: #fcf3ee;
 }
-.slider::-webkit-slider-thumb{
-  background-color: gray;
-  border-radius: 0;
-  border: none;
+.range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 20px;
-  width: 6px;
-}
-.slider::-moz-range-thumb{
-  background-color: gray;
-  border-radius: 0;
+  background-color: #8ec6ff;
   border: none;
-  height: 20px;
-  width: 6px;
-}
-
-.slider-mark{
-  transform: translateX(-50%);
-  justify-items: center;
-  pointer-events: none;
-  position: absolute;
-  left: var(--x);
-  display: grid;
   height: 40px;
+  width: 10px;
+  cursor: col-resize;
+  border-radius: 5px;
 }
-.marker{
-  background-color: blue;
-  height: 20px;
-  width: 3px;
+.range::-moz-range-thumb {
+  appearance: none;
+  background-color: #8ec6ff;
+  border: none;
+  height: 40px;
+  width: 10px;
+  cursor: col-resize;
+  border-radius: 5px;
 }
-.madbank{
-  color: #fff;
-  user-select: none;
+body {
+  margin: 2rem;
+}
+#sliderValue {
+  width: 20%;
+  margin: 120px;
 }
