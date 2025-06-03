@@ -10,22 +10,21 @@ body {
 .labels span {
   position: absolute;
   left: calc(
-    6px + (100% - 10px) *
+    4px + (100% - 10px) *
       ((var(--val) - var(--min)) / (var(--max) - var(--min)))
   );
   user-select: none;
 }
 .labels span::before {
-  padding: 0;
   content: "";
   position: absolute;
   width: 2px;
   height: 30px;
   background-color: #c34346;
   pointer-events: none;
-  transform: translateY(-30px);
+  transform: translateY(-29px);
 }
-span p {
+.labels span p {
   transform: translateX(2px) translateY(5px) rotate(45deg);
   transform-origin: top left;
   margin: 0;
@@ -33,11 +32,10 @@ span p {
 .range {
   width: 60vw;
   height: 20px;
+  margin: 0;
   appearance: none;
   border-radius: 5px;
   cursor: pointer;
-  outline: none;
-  border: none;
   background-color: #fcf3ee;
 }
 .range::-webkit-slider-thumb {
