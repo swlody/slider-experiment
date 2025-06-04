@@ -8,9 +8,6 @@ body {
   width: 60vw;
   margin: 0 auto 3rem;
 }
-.labels {
-  display: contents;
-}
 .labels span {
   position: absolute;
   left: calc(
