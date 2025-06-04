@@ -1,4 +1,5 @@
 body {
+  line-height: 1;
   color: #ebe3de;
   background-color: #080504;
 }
@@ -7,25 +8,29 @@ body {
   width: 60vw;
   margin: 0 auto 3rem;
 }
+.labels {
+  display: contents;
+}
 .labels span {
   position: absolute;
   left: calc(
     4px + (100% - 10px) *
       ((var(--val) - var(--min)) / (var(--max) - var(--min)))
   );
+  -webkit-user-select: none;
   user-select: none;
 }
 .labels span::before {
   content: "";
   position: absolute;
+  top: -29px;
   width: 2px;
   height: 30px;
   background-color: #c34346;
   pointer-events: none;
-  transform: translateY(-29px);
 }
 .labels span p {
-  transform: translateX(2px) translateY(5px) rotate(45deg);
+  transform: translateX(2px) translateY(8px) rotate(45deg);
   transform-origin: top left;
   margin: 0;
 }
